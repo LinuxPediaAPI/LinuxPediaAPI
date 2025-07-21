@@ -73,8 +73,8 @@ Nunca faça:
 
 ## 👥 Contribuidores
 
-<a href="https://github.com/vn-wiki/LinuxPedia/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=vn-wiki/LinuxPedia" />
+<a href="https://github.com/LinuxPediaAPI/LinuxPediaAPI/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=LinuxPediaAPI/LinuxPediaAPI" />
 </a>
 
 ---

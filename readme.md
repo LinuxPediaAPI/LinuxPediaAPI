@@ -1,4 +1,4 @@
-<h1 align="center">Linux Wiki API</h1>
+<h1 align="center">Linux Pedia API</h1>
 
 <div align="center">
   <p>
@@ -7,14 +7,14 @@
 </div>
 
 <div align="center">
-  <a href="https://github.com/LinuxWikiAPI/linuxwikiapi">
-    <img src="https://img.shields.io/github/stars/LinuxWikiAPI/linuxwikiapi?style=social" alt="GitHub stars" />
+  <a href="https://github.com/vn-wiki/LinuxPedia">
+    <img src="https://img.shields.io/github/stars/vn-wiki/LinuxPedia?style=social" alt="GitHub stars" />
   </a>
-  <a href="https://github.com/LinuxWikiAPI/linuxwikiapi/issues">
-    <img src="https://img.shields.io/github/issues/LinuxWikiAPI/linuxwikiapi" alt="GitHub issues" />
+  <a href="https://github.com/vn-wiki/LinuxPedia/issues">
+    <img src="https://img.shields.io/github/issues/vn-wiki/LinuxPedia" alt="GitHub issues" />
   </a>
-  <a href="https://github.com/LinuxWikiAPI/linuxwikiapi/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/LinuxWikiAPI/linuxwikiapi" alt="License" />
+  <a href="https://github.com/vn-wiki/LinuxPedia/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/vn-wiki/LinuxPedia" alt="License" />
   </a>
   <a href="https://nodejs.org/">
     <img src="https://img.shields.io/badge/language-Node.js-green" alt="Language" />
@@ -25,7 +25,7 @@
 
 ## 🔧 Motivo
 
-O acesso programático a informações sobre Linux é fundamental para desenvolvedores, sysadmins e entusiastas. O Linux Wiki API facilita a consulta de dados relevantes, promovendo o software livre e a colaboração.
+O acesso programático a informações sobre Linux é fundamental para desenvolvedores, sysadmins e entusiastas. O Linux Pedia API facilita a consulta de dados relevantes, promovendo o software livre e a colaboração.
 
 Este projeto experimental centraliza e disponibiliza endpoints modernos para consulta sobre distribuições, comandos, kernel, pacotes e muito mais.
 
@@ -41,7 +41,7 @@ Consulte endpoints para:
 - Pacotes populares  
 - Histórico e curiosidades  
 
-Para documentação completa, acesse: [Documentação Linux Wiki API no GitHub](https://github.com/LinuxWikiAPI/linuxwikiapi#readme)
+Para documentação completa, acesse: [Documentação Linux Pedia API no GitHub](https://github.com/vn-wiki/LinuxPedia#readme)
 
 ---
 
@@ -59,7 +59,7 @@ Este projeto é uma cooperação aberta! Sua contribuição é muito bem-vinda.
 
 ## ⚠️ Termos de uso
 
-O Linux Wiki API é uma iniciativa aberta para a comunidade. Por favor, não abuse deste serviço.
+O Linux Pedia API é uma iniciativa aberta para a comunidade. Por favor, não abuse deste serviço.
 
 - Evite consultas automatizadas em massa ou crawling de todos os dados.  
 - Para grandes volumes, entre em contato para soluções adequadas.
@@ -73,8 +73,8 @@ Nunca faça:
 
 ## 👥 Contribuidores
 
-<a href="https://github.com/LinuxWikiAPI/linuxwikiapi/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=LinuxWikiAPI/linuxwikiapi" />
+<a href="https://github.com/vn-wiki/LinuxPedia/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=vn-wiki/LinuxPedia" />
 </a>
 
 ---

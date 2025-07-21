@@ -10,9 +10,6 @@
   <a href="https://github.com/vn-wiki/LinuxPedia">
     <img src="https://img.shields.io/github/stars/vn-wiki/LinuxPedia?style=social" alt="GitHub stars" />
   </a>
-  <a href="https://github.com/vn-wiki/LinuxPedia/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=vn-wiki/LinuxPedia" alt="Contribuidores" />
-  </a>
   <a href="https://github.com/vn-wiki/LinuxPedia/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/vn-wiki/LinuxPedia" alt="License" />
   </a>

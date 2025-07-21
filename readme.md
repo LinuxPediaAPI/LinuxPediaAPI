@@ -57,7 +57,7 @@ Este projeto é uma cooperação aberta! Sua contribuição é muito bem-vinda.
 
 ## ⚠️ Termos de uso
 
-O Linux Pedia API é uma iniciativa aberta para a comunidade. Por favor, não abuse deste serviço.
+O LinuxPedia API é uma iniciativa aberta para a comunidade. Por favor, não abuse deste serviço.
 
 - Evite consultas automatizadas em massa ou crawling de todos os dados.  
 - Para grandes volumes, entre em contato para soluções adequadas.

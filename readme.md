@@ -86,5 +86,4 @@ Nunca faça:
 
 ---
 
-
-Feito com ❤️ por Vitor  
+Feito com Carinho Para Toda a Comunidade de Linux 

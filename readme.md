@@ -10,8 +10,8 @@
   <a href="https://github.com/vn-wiki/LinuxPedia">
     <img src="https://img.shields.io/github/stars/vn-wiki/LinuxPedia?style=social" alt="GitHub stars" />
   </a>
-  <a href="https://github.com/vn-wiki/LinuxPedia/issues">
-    <img src="https://img.shields.io/github/issues/vn-wiki/LinuxPedia" alt="GitHub issues" />
+  <a href="https://github.com/vn-wiki/LinuxPedia/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=vn-wiki/LinuxPedia" alt="Contribuidores" />
   </a>
   <a href="https://github.com/vn-wiki/LinuxPedia/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/vn-wiki/LinuxPedia" alt="License" />
@@ -20,6 +20,7 @@
     <img src="https://img.shields.io/badge/language-Node.js-green" alt="Language" />
   </a>
 </div>
+
 
 ---
 

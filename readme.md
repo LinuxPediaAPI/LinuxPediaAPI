@@ -71,6 +71,8 @@ Nunca faça:
 
 ---
 
+---
+
 ## 👥 Contribuidores
 
 <a href="https://github.com/vn-wiki/LinuxPedia/graphs/contributors">
@@ -79,11 +81,12 @@ Nunca faça:
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Autores
 
-| [<img src="https://github.com/vito-ysl.png?size=115" width=115><br><sub>@vito-ysl</sub>](https://github.com/vito-ysl) |
-| :---: |
+| [<img src="https://github.com/vito-ysl.png?size=115" width=115><br><sub>@vito-ysl</sub>](https://github.com/vito-ysl) | [<img src="https://github.com/Rezys07.png?size=115" width=115><br><sub>@Rezys07</sub>](https://github.com/Rezys07) |
+| :---: | :---: |
 
 ---
+
 
 Feito com ❤️ por Vitor  

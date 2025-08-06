@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.get('/api/v1', (req, res) => {
+app.get('/api/v1/', (req, res) => {
     res.send('still in development / ainda em desenvolvimento');
 });
 

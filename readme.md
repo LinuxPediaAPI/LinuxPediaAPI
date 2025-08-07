@@ -81,8 +81,30 @@ Nunca faça:
 
 ## 👨‍💻 Autores
 
-| [<img src="https://github.com/vito-ysl.png?size=115" width=115><br><sub>@vito-ysl</sub>](https://github.com/vito-ysl) | [<img src="https://github.com/Rezys07.png?size=115" width=115><br><sub>@Rezys07</sub>](https://github.com/Rezys07) |
-| :---: | :---: |
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/vito-ysl">
+        <img src="https://github.com/vito-ysl.png?size=115" width="115" style="border-radius: 50%;" /><br />
+        <sub>@vito-ysl</sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Rezys07">
+        <img src="https://github.com/Rezys07.png?size=115" width="115" style="border-radius: 50%;" /><br />
+        <sub>@Rezys07</sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/alex518123">
+        <img src="https://avatars.githubusercontent.com/u/124455647?v=4" width="115" style="border-radius: 50%;" /><br />
+        <sub>@alex518123</sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
 
 ---
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://linux-pedia-api.vercel.app/sitemap.xml

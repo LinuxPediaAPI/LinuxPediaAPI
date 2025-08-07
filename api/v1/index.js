@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 
 app.get('/api/v1/', (req, res) => {
-    res.send('still in development / ainda em desenvolvimento');
+    res.json({
+        "Projeto": "Em desenvolvimento"
+    });
 });
 
 app.listen(3000, () => {

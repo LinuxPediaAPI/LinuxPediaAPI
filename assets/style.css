@@ -1,296 +1,293 @@
-/* =====================================
-   VARIÁVEIS GLOBAIS - tema noturno/roxo
-   ===================================== */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 :root {
-    --primary: #2E3061;
-    /* Night Blue - cor principal */
-    --secondary: #555184;
-    /* Purple - cor secundária */
-    --accent: #9997BC;
-    /* Lavender - cor de destaque */
-    --dark: #2E3061;
-    /* Night Blue - elementos escuros */
-    --light: #C8C7D9;
-    /* Lilac claro - texto e elementos claros */
-    --background: #28293D;
-    /* Midnight - fundo da página */
-    --text: #E9ECEF;
-    /* Texto claro para contraste */
-    --glass: rgba(46, 48, 97, 0.8);
-    /* Night Blue com transparência para efeito vidro */
+  --color-bg: #f5f3ff;
+  --color-primary: #6e56cf;
+  --color-dark: #4b3f72;
+  --color-secondary: #9a8cbd;
+  --color-hover: #5b44b0;
+  --color-shadow: rgba(110, 86, 207, 0.3);
+  font-family: "Ubuntu", 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', sans-serif;
 }
 
-/* =====================================
-   RESET / BASE
-   ===================================== */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* ===== Hero com shape branco e imagens por trás ===== */
+.hero {
+  /* Container principal do hero, ocupa toda a altura da tela */
+  position: relative;
+  min-height: 94vh;
+  display: grid;
+  align-items: center;
+  overflow: clip; /* Impede overflow das imagens/blobs */
+  color: #0d0f12;
 }
 
-html {
-    font-size: 87.5%;
-    scroll-behavior: smooth;
+/* Camada das imagens e blob atrás */
+.hero-images {
+  /* Camada absoluta atrás do texto */
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* Imagens atrás do texto */
+  color: #0c6b58; /* cor do blob SVG */
 }
 
-@media (min-width: 720px) {
-    html {
-        font-size: 87.5%;
-    }
+.blob-pattern {
+  /* Blob SVG decorativo no fundo */
+  position: absolute;
+  right: -4rem;   /* Ajusta distância do texto */
+  top: -8rem;     /* Ajusta posição vertical */
+  width: 900px;
+  height: auto;
+  opacity: 0.2;
+  filter: blur(1px) saturate(0.9);
 }
 
-@media (min-width: 1080px) {
-    html {
-        font-size: 93.75%;
-    }
+.image-marquee {
+  /* Marquee de imagens animadas atrás do texto */
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 80px 0 120px 25%;
+  pointer-events: none; /* Imagens não interativas */
+
+  /* Máscara SVG para efeito de ondas */
+  -webkit-mask-image: url('/images/ondas.svg');
+  mask-image: url('/images/ondas.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+
+.image-marquee .col {
+  /* Colunas de imagens animadas verticalmente */
+  display: grid;
+  gap: 24px;
+  animation: scroll-col 18s linear infinite;
+}
+.image-marquee .col:nth-child(2) {
+  /* Segunda coluna anima reverso e mais lenta */
+  animation: scroll-col 22s linear infinite reverse;
+}
+.image-marquee .col:nth-child(3) {
+  /* Terceira coluna anima mais devagar */
+  animation: scroll-col 26s linear infinite;
+}
+
+.image-marquee img {
+  /* Imagens do marquee estilizadas */
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  opacity: .9;
+}
+
+@keyframes scroll-col {
+  /* Animação para mover as colunas verticalmente */
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* Fundo branco arredondado atrás do texto */
+.white-pane {
+  display: none !important;
+}
+
+/* Borda/halo arredondado para dar sensação do recorte suave */
+.white-blob {
+  display: none !important;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding: 96px 0 96px 0;
+  margin: 0;
+  max-width: 1000px;
+  padding-left: 2vw;
+  margin-right: 2vw; /* Aumenta o espaço à direita do texto */
+}
+
+.hero-content .row,
+.hero-content .col-lg-8 {
+  margin: 0;
+  padding: 0;
+}
+
+.kicker {
+  letter-spacing: .16em;
+  font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  .image-marquee { padding-left: 20%; }
+  .blob-pattern { right: -18rem; top: -12rem; width: 720px; }
+  .white-blob { width: 70%; }
+  .hero-content {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .image-marquee { display: none; }
+  .white-pane { clip-path: ellipse(120% 100% at 30% 0); }
 }
 
 body {
-    background: var(--background);
-    font-family: 'Inter', Arial, sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    color: var(--text);
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-dark);
 }
 
-button,
-input,
-textarea {
-    font-family: 'Inter', Arial, sans-serif;
-    color: var(--text);
-    font-size: 1rem;
-    font-weight: 400;
+/* Scrollbar customizado com a paleta roxa */
+body::-webkit-scrollbar,
+.cards::-webkit-scrollbar {
+  width: 12px;
+  background: var(--color-bg);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 600;
-    color: var(--light);
+body::-webkit-scrollbar-thumb,
+.cards::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 6px;
+  border: 2px solid var(--color-bg);
 }
 
-h2 {
-    font-size: 2.25rem;
+body::-webkit-scrollbar-thumb:hover,
+.cards::-webkit-scrollbar-thumb:hover {
+  background: var(--color-hover);
 }
 
-/* =====================================
-  HEADER
-   ===================================== */
-header {
-    background: var(--dark);
-    color: var(--text);
-    padding: 24px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+/* Firefox */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-bg);
 }
 
-.logo {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--light);
-    max-width: 68.125rem;
-    margin: 0 auto;
-    padding: 0 1rem;
-    text-align: left;
+
+.btn-success, .btn-primary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px var(--color-shadow);
 }
 
-/* Nav estilizado com flex */
-nav {
-    max-width: 68.125rem;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+.btn-success:hover, .btn-primary:hover {
+  background-color: var(--color-hover) !important;
+  border-color: var(--color-hover) !important;
 }
 
-nav a {
-    color: var(--text);
-    margin-left: 24px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
+.btn-outline-secondary {
+  color: var(--color-primary) !important;
+  border-color: var(--color-secondary) !important;
+  background: transparent !important;
 }
 
-nav a:hover {
-    color: var(--accent);
+.btn-outline-secondary:hover {
+  color: #fff !important;
+  background: var(--color-hover) !important;
+  border-color: var(--color-hover) !important;
 }
 
-/* =====================================
-  MAIN CONTAINER
-   ===================================== */
-main {
-    flex: 1;
-    padding: 40px 1rem;
-    max-width: 68.125rem;
-    margin: 0 auto;
-    width: 100%;
+.text-success, .text-info {
+  color: var(--color-primary) !important;
 }
 
-/* Seções principais */
-section {
-    margin-bottom: 48px;
+.text-secondary, .text-muted {
+  color: var(--color-secondary) !important;
 }
 
-h2 {
-    margin-bottom: 12px;
+.hero-content h1,
+.kicker {
+  color: var(--color-primary);
 }
 
-/* Botão CTA estilizado */
-.cta {
-    display: inline-block;
-    background: var(--primary);
-    color: var(--text);
-    padding: 12px 28px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 18px;
-    transition: background-color 0.3s ease;
+
+/* Navbar efeito glassmorphism + sombra */
+.navbar {
+  background: rgba(44, 20, 84, 0.92) !important; /* Roxo muito escuro com transparência */
+  box-shadow: 0 8px 32px 0 var(--color-shadow);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-secondary);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
-.cta:hover {
-    background: var(--secondary);
+.navbar:hover,
+.navbar:focus-within {
+  background: rgba(44, 20, 84, 0.92) !important; /* var(--color-hover) com transparência */
+  box-shadow: 0 12px 40px 0 var(--color-shadow);
 }
 
-/* Caixa de termos */
-.terms {
-    background: var(--dark);
-    border-radius: 8px;
-    padding: 24px;
-    box-shadow: 0 2px 8px rgba(157, 78, 221, 0.2);
+/* Links do navbar com transição */
+.navbar-nav .nav-link {
+  color: var(--color-bg) !important;
+  font-weight: 500;
+  transition: color 0.2s;
 }
 
-/* Listas com margem para indentação */
-ul {
-    margin: 12px 0 0 18px;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--color-secondary) !important;
 }
 
-/* =====================================
-   FOOTER
-   ===================================== */
 footer {
-    background: var(--dark);
-    color: var(--text);
-    text-align: center;
-    padding: 18px 0;
-    font-size: 0.95rem;
+  background: var(--color-bg);
+  color: var(--color-secondary);
 }
 
-.footer-nav {
-    display: none; /* Escondido por padrão */
+/* Paleta de cores aplicada nos cards */
+.cards .card {
+  background: var(--color-bg);
+  color: var(--color-dark);
+  box-shadow: 0 4px 24px var(--color-shadow);
+  border: 1px solid var(--color-secondary);
 }
 
-/* Links dentro do conteúdo, exceto botões CTA */
-main a:not(.cta) {
-    color: var(--accent);
-    text-decoration: none;
+.cards .card .card-title {
+  color: var(--color-primary);
 }
 
-main a:not(.cta):hover {
-    text-decoration: underline;
+.cards .card .card-text {
+  color: var(--color-secondary);
 }
 
-/* =====================================
-   📱 RESPONSIVIDADE - MOBILE
-   ===================================== */
-@media (max-width: 768px) {
-    header {
-        padding: 1rem 0;
-    }
-    
-    .logo {
-        font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 0;
-    }
-    
-    nav {
-        display: none; /* Esconde a navegação do header no mobile */
-    }
-    
-    main {
-        padding: 1.5rem 1rem;
-    }
-    
-    section {
-        margin-bottom: 2.5rem;
-    }
-    
-    h2 {
-        font-size: 1.75rem;
-    }
-    
-    .terms {
-        padding: 1.5rem;
-    }
-    
-    .cta {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 14px 0;
-    }
-    
-    ul {
-        margin-left: 1.5rem;
-    }
-    
-    /* Mostra a navegação no footer apenas no mobile */
-    .footer-nav {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        margin: 0.2rem auto;
-        max-width: 300px;
-        font-size: 1.2rem;
-    }
-    
-    .footer-nav a {
-        color: var(--text);
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        background: rgba(46, 48, 97, 0.3);
-        border-radius: 4px;
-        transition: background-color 0.3s ease;
-    }
-    
-    .footer-nav a:hover {
-        background: var(--primary);
-    }
-    
-    footer {
-        padding: 1.5rem;
-    }
+.cards .card .card-body {
+  background: var(--color-bg);
 }
 
-/* Tablet */
-@media (min-width: 769px) and (max-width: 980px) {
-    .logo,
-    nav {
-        max-width: 100%;
-        padding: 0 1.5rem;
-    }
-    
-    nav {
-        justify-content: flex-end;
-    }
-    
-    main {
-        padding: 30px 1.5rem;
-    }
-    
-    section {
-        margin-bottom: 40px;
-    }
+/* Alterna a posição da imagem nos cards pares */
+.cards .card:nth-child(even) .row {
+  flex-direction: row-reverse;
+}
+
+/* Ajusta o arredondamento da imagem conforme a posição */
+.cards .card:nth-child(even) .img-fluid {
+  border-radius: 0 .5rem .5rem 0 !important; /* direita */
+}
+.cards .card:nth-child(odd) .img-fluid {
+  border-radius: .5rem 0 0 .5rem !important; /* esquerda */
+}
+
+/* Cards ocupando toda a largura e altura da tela, mas sem causar scroll horizontal */
+.cards .card {
+  max-width: 100%;
+  width: 100%;
+  height: 50vh;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  border-radius: 3rem;
+  box-sizing: border-box;
+}
+
+/* Imagem do card ocupa toda a altura do card */
+.cards .card .img-fluid {
+  margin: 0; 
+  border-radius: 0.5rem;
+  width: 100%;
+  width: 65%;
+  height: auto;
+  object-fit: cover;
 }

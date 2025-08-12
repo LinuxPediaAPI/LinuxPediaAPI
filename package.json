@@ -1,0 +1,22 @@
+{
+  "name": "linuxpediaapi",
+  "version": "1.0.0",
+  "description": "API for LinuxPedia",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Vito",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LinuxPediaAPI/LinuxPediaAPI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LinuxPediaAPI/LinuxPediaAPI/issues"
+  },
+  "homepage": "https://github.com/LinuxPediaAPI/LinuxPediaAPI#readme"
+}

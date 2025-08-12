@@ -63,7 +63,7 @@
 .image-marquee .col {
   /* Colunas de imagens animadas verticalmente */
   display: grid;
-  gap: 24px;
+  gap: 20px;
   animation: scroll-col 18s linear infinite;
 }
 .image-marquee .col:nth-child(2) {
@@ -77,12 +77,13 @@
 
 .image-marquee img {
   /* Imagens do marquee estilizadas */
-  width: 100%;
-  height: 220px;
+  width: 300px;
+  height: auto;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 26px;
   box-shadow: 0 10px 30px rgba(0,0,0,.35);
-  opacity: .9;
+  opacity: 0.5;
+  
 }
 
 @keyframes scroll-col {

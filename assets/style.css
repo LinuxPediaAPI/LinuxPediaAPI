@@ -10,6 +10,15 @@
   font-family: "Ubuntu", 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', sans-serif;
 }
 
+.navbar-toggler {
+  border-color: white; 
+}
+
+.navbar-toggler-icon {
+  background-image: 
+  url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"%3E%3Cpath stroke="white" stroke-width="2" stroke-linecap="round" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
 /* ===== Hero com shape branco e imagens por trás ===== */
 .hero {
   /* Container principal do hero, ocupa toda a altura da tela */
@@ -292,3 +301,296 @@ footer {
   height: auto;
   object-fit: cover;
 }
+
+
+/* ================================== */
+/* RESPONSIVIDADE */
+/* ================================== */
+
+/* ===== Base até 991.98px ===== */
+@media (max-width: 991.98px) {
+  /* Ajusta cards empilhados */
+  .cards .card .row,
+  .cards .card:nth-child(even) .row,
+  .cards .card:nth-child(odd) .row {
+    flex-direction: column !important;
+  }
+
+  .cards .card .img-fluid {
+    width: 100%;
+    border-radius: 1.5rem 1.5rem 0 0 !important;
+  }
+}
+
+/* ===== Hero Content — estilo glass compartilhado ===== */
+@media (max-width: 767.98px),
+       (min-width: 768px) and (max-width: 991.98px),
+       (min-width: 992px) and (max-width: 1199.98px) {
+  .hero-content {
+    background: linear-gradient(
+      to bottom right,
+      #f9f7ff 0%,    
+      #e8dff9 50%,   
+      #dacff2 100%  
+    );
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow:
+      -10px -10px 20px rgba(255, 255, 255, 0.6),
+      10px 10px 20px rgba(110, 86, 207, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* ===== Extra pequenos (até 575.98px) ===== */
+@media (max-width: 575.98px) {
+  .hero {
+    min-height: auto;
+    padding: 60px 20px 40px;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding: 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .features-list-container {
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    text-align: left;
+  }
+
+  .features-list li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin: 0.35rem 0;
+  }
+
+  .features-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn,
+  .hero-content .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .hero-images,
+  .image-marquee,
+  .blob-pattern {
+    display: none !important;
+  }
+
+  .cards .card {
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 20px;
+  }
+  .cards .card .row {
+    flex-direction: column !important;
+  }
+
+  .navbar-collapse {
+    padding: 15px;
+    background: rgba(44, 20, 84, 0.95);
+    border-radius: 0 0 10px 10px;
+    margin-top: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* ===== Pequenos (576px–767.98px) ===== */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero {
+    min-height: auto;
+    padding: 80px 30px 60px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .image-marquee,
+  .blob-pattern,
+  .hero-images {
+    display: none !important;
+  }
+
+  .btn-group {
+    justify-content: center;
+  }
+
+  .cards .card {
+    height: auto;
+    border-radius: 1.5rem;
+  }
+}
+
+/* ===== Médios (768px–991.98px) - Tablets ===== */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero {
+    min-height: 70vh;
+    padding: 80px 30px 40rem; /* padding-bottom ajustado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .image-marquee,
+  .blob-pattern,
+  .hero-images {
+    display: none !important;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 2.5rem;
+  }
+
+.features-list-container {
+    display: flex;
+    justify-content: flex-start;
+    width: calc(100% - 4rem);
+    margin: 1rem 2rem;
+    overflow: visible;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    position: relative;
+    left: -1.5rem;
+  }
+
+  .features-list li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .features-list li::before {
+    content: "•";
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+  }
+}
+
+/* ===== Grandes (992px–1199.98px) ===== */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hero {
+    min-height: 85vh;
+    padding-bottom: 35rem;
+  }
+  .hero-images,
+  .image-marquee,
+  .blob-pattern {
+    display: none !important;
+  }
+  .cards .card {
+    height: 45vh;
+  }
+  .cards .card .img-fluid {
+    width: 60%;
+  }
+}
+
+/* ===== Extra grandes (1200px e acima) ===== */
+@media (min-width: 1200px) {
+  .hero {
+    min-height: 94vh;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .image-marquee {
+    padding-left: 25%;
+    gap: 25px;
+  }
+  .image-marquee img {
+    width: 300px;
+  }
+
+  .blob-pattern {
+    right: -4rem;
+    top: -8rem;
+    width: 900px;
+  }
+
+  .cards .card {
+    height: 50vh;
+  }
+
+  .cards .card .img-fluid {
+    width: 65%;
+  }
+}
+
+/* ===== Nest Hub e telas baixas ===== */
+@media (min-width: 1024px) and (max-height: 600px) {
+  .hero {
+    padding-top: 20px;
+    padding-bottom: 6rem;
+    min-height: auto;
+  }
+
+  .hero-content {
+    margin-top: 2rem;
+  }
+}
+
+
+
+

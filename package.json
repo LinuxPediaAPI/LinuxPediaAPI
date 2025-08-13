@@ -1,17 +1,15 @@
 {
-  "name": "linuxpedia-api",
+  "name": "linuxpediaapi",
   "version": "1.0.0",
   "description": "API for LinuxPedia",
-  "type": "module",
-  "main": "api/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./assets/index.js"
+    "start": "node index.js"
   },
   "author": "Vito",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2",
-    "mongoose": "^8.3.5"
+    "bootstrap": "^5.3.7"
   },
   "repository": {
     "type": "git",

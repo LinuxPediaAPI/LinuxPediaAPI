@@ -264,6 +264,4 @@ app.delete("/api/v1/comandos/util/:id", async (req, res) => {
 });
 
 // Iniciar servidor
-app.listen(3000, () => {
-    console.log("🚀 Servidor rodando na porta 3000");
-});
+export default app;

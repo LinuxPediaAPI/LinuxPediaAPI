@@ -1,24 +1,31 @@
 require("dotenv").config(); // Adicione esta linha no topo
 
-const express = require("express");
-const mongoose = require("mongoose");
+import express from "express";
+import mongoose from "mongoose";
 
 const app = express();
 app.use(express.json());
 
-// Conectar ao MongoDB usando variável de ambiente
-mongoose.connect(process.env.MONGODB_URI)
-    .then(() => console.log("✅ Conectado ao MongoDB"))
-    .catch((err) => console.error("❌ Erro ao conectar:", err));
+// Conexão com MongoDB Atlas (evita múltiplas conexões em ambiente serverless)
+if (!mongoose.connection.readyState) {
+  mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
+}
 
 // Model
-const ApiModel = mongoose.model("API", {
-    command: String,
-    description: String,
-    example: String,
-    category: String // Adicionado para categorizar os comandos
+const ApiModel = mongoose.models.API || mongoose.model("API", {
+  command: String,
+  description: String,
+  example: String,
+  category: String
 });
 
+// Rota principal
+app.get("/", (req, res) => {
+  res.json({ msg: "API rodando!" });
+});
 
 // Rotas de comandos organizadas por categoria
 // Cada rota pode ser implementada por um responsável diferente
@@ -29,7 +36,7 @@ const ApiModel = mongoose.model("API", {
 // Responsável: Vitor
 app.get("/api/v1/comandos/arquivos", async (req, res) => {
     try {
-        const comandosArquivos = await ApiModel.find({ categoria: "arquivos" });
+        const comandosArquivos = await ApiModel.find({ category: "arquivos" });
         res.json(comandosArquivos);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -39,7 +46,7 @@ app.get("/api/v1/comandos/arquivos", async (req, res) => {
 // POST http://localhost:3000/api/v1/comandos/arquivos
 app.post("/api/v1/comandos/arquivos", async (req, res) => {
     try {
-        const novoComando = new ApiModel({ ...req.body, categoria: "arquivos" });
+        const novoComando = new ApiModel({ ...req.body, category: "arquivos" });
         await novoComando.save();
         res.status(201).json(novoComando);
     } catch (error) {
@@ -77,7 +84,7 @@ app.delete("/api/v1/comandos/arquivos/:id", async (req, res) => {
 // Responsável: Nathan
 app.get("/api/v1/comandos/sistema", async (req, res) => {
     try {
-        const comandosSistema = await ApiModel.find({ categoria: "sistema" });
+        const comandosSistema = await ApiModel.find({ category: "sistema" });
         res.json(comandosSistema);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -87,7 +94,7 @@ app.get("/api/v1/comandos/sistema", async (req, res) => {
 // POST http://localhost:3000/api/v1/comandos/sistema
 app.post("/api/v1/comandos/sistema", async (req, res) => {
     try {
-        const novoComando = new ApiModel({ ...req.body, categoria: "sistema" });
+        const novoComando = new ApiModel({ ...req.body, category: "sistema" });
         await novoComando.save();
         res.status(201).json(novoComando);
     } catch (error) {
@@ -125,7 +132,7 @@ app.delete("/api/v1/comandos/sistema/:id", async (req, res) => {
 // Responsável: Alexander
 app.get("/api/v1/comandos/rede", async (req, res) => {
     try {
-        const comandosRede = await ApiModel.find({ categoria: "rede" });
+        const comandosRede = await ApiModel.find({ category: "rede" });
         res.json(comandosRede);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -135,7 +142,7 @@ app.get("/api/v1/comandos/rede", async (req, res) => {
 // POST http://localhost:3000/api/v1/comandos/rede
 app.post("/api/v1/comandos/rede", async (req, res) => {
     try {
-        const novoComando = new ApiModel({ ...req.body, categoria: "rede" });
+        const novoComando = new ApiModel({ ...req.body, category: "rede" });
         await novoComando.save();
         res.status(201).json(novoComando);
     } catch (error) {
@@ -173,7 +180,7 @@ app.delete("/api/v1/comandos/rede/:id", async (req, res) => {
 // Responsável: Vitor
 app.get("/api/v1/comandos/pacotes", async (req, res) => {
     try {
-        const comandosPacotes = await ApiModel.find({ categoria: "pacotes" });
+        const comandosPacotes = await ApiModel.find({ category: "pacotes" });
         res.json(comandosPacotes);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -183,7 +190,7 @@ app.get("/api/v1/comandos/pacotes", async (req, res) => {
 // POST http://localhost:3000/api/v1/comandos/pacotes
 app.post("/api/v1/comandos/pacotes", async (req, res) => {
     try {
-        const novoComando = new ApiModel({ ...req.body, categoria: "pacotes" });
+        const novoComando = new ApiModel({ ...req.body, category: "pacotes" });
         await novoComando.save();
         res.status(201).json(novoComando);
     } catch (error) {
@@ -221,7 +228,7 @@ app.delete("/api/v1/comandos/pacotes/:id", async (req, res) => {
 // Responsável: Nathan
 app.get("/api/v1/comandos/util", async (req, res) => {
     try {
-        const comandosUtil = await ApiModel.find({ categoria: "util" });
+        const comandosUtil = await ApiModel.find({ category: "util" });
         res.json(comandosUtil);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -231,7 +238,7 @@ app.get("/api/v1/comandos/util", async (req, res) => {
 // POST http://localhost:3000/api/v1/comandos/util
 app.post("/api/v1/comandos/util", async (req, res) => {
     try {
-        const novoComando = new ApiModel({ ...req.body, categoria: "util" });
+        const novoComando = new ApiModel({ ...req.body, category: "util" });
         await novoComando.save();
         res.status(201).json(novoComando);
     } catch (error) {

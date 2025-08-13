@@ -1,4 +1,3 @@
-require("dotenv").config(); // Adicione esta linha no topo
 
 import express from "express";
 import mongoose from "mongoose";

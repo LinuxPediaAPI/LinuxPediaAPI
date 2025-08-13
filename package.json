@@ -10,11 +10,8 @@
   "author": "Vito",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.3.7",
-    "dotenv": "^17.2.1",
     "express": "^4.19.2",
-    "mongoose": "^8.3.5",
-    "nodemon": "^3.1.10"
+    "mongoose": "^8.3.5"
   },
   "repository": {
     "type": "git",

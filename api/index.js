@@ -7,13 +7,14 @@ const app = express();
 app.use(express.json());
 
 
-// Serve tudo que está na pasta "public" como estático
-app.use(express.static(path.join(__dirname, "public")));
+// Serve estáticos da pasta "public"
+app.use(express.static(path.join(__dirname, "../public")));
 
-// Rota para o index.html
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
+
+
 // Schemas e Models para cada categoria de comandos
 const comandoSchema = new mongoose.Schema({
     nome: String,

@@ -30,6 +30,11 @@ const Item = mongoose.model('Item', new mongoose.Schema({
     criadoEm: { type: Date, default: Date.now },
 }));
 
+
+app.get('/', (req, res) => {
+    const path = require('path');
+    res.sendFile(path.join(__dirname, '..', 'index.html'));
+});
 // Conexão com MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,

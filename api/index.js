@@ -1,14 +1,15 @@
-// Rota para servir o index.html na raiz (compatível com Vercel)
-app.get('/', (req, res) => {
-    const path = require('path');
-    res.sendFile(path.join(__dirname, '..', 'index.html'));
-});
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 
 const app = express();
 app.use(express.json());
+
+// Rota para servir o index.html na raiz (compatível com Vercel)
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'index.html'));
+});
 
 // Schemas e Models para cada categoria de comandos
 const comandoSchema = new mongoose.Schema({
@@ -30,11 +31,6 @@ const Item = mongoose.model('Item', new mongoose.Schema({
     criadoEm: { type: Date, default: Date.now },
 }));
 
-
-app.get('/', (req, res) => {
-    const path = require('path');
-    res.sendFile(path.join(__dirname, '..', 'index.html'));
-});
 // Conexão com MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,

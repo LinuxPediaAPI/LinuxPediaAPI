@@ -1,6 +1,7 @@
-const path = require('path');
-// Servir arquivos estáticos (como index.html) da raiz do projeto
-app.use(express.static(path.join(__dirname, '.')));
+// Rota para servir o index.html na raiz (compatível com Vercel)
+app.get('/', (req, res) => {
+    res.sendFile(require('path').join(__dirname, 'index.html'));
+});
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');

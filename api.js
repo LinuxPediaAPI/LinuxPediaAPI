@@ -1,3 +1,6 @@
+const path = require('path');
+// Servir arquivos estáticos (como index.html) da raiz do projeto
+app.use(express.static(path.join(__dirname, '.')));
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');

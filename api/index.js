@@ -10,7 +10,7 @@ app.use(express.json());
 // Serve estáticos da pasta "public"
 app.use(express.static(path.join(__dirname, "../public")));
 app.use('/images', express.static(path.join(__dirname, "../public/images")));
-
+app.use('/favicon.ico', express.static(path.join(__dirname, '../public/favicon.ico')));
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"));
 });

@@ -1,6 +1,7 @@
 // Rota para servir o index.html na raiz (compatível com Vercel)
 app.get('/', (req, res) => {
-    res.sendFile(require('path').join(__dirname, 'index.html'));
+    const path = require('path');
+    res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 require('dotenv').config();
 const express = require('express');

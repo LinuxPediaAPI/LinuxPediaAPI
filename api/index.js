@@ -1,4 +1,5 @@
 require('dotenv').config();
+const e = require('express');
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -31,8 +32,9 @@ const ComandoUtil = mongoose.model('ComandoUtil', comandoSchema);
 
 // Modelo simples para itens
 const Item = mongoose.model('Item', new mongoose.Schema({
-    nome: String,
+    comandos: String,
     descricao: String,
+    exemplo: String,
     criadoEm: { type: Date, default: Date.now },
 }));
 
@@ -103,32 +105,6 @@ app.get('/api/v1/comandos/pacotes', (req, res) => {
 });
 app.get('/api/v1/comandos/util', (req, res) => {
     res.json({ comandos: [], categoria: 'util' });
-});
-
-// CRUD simples com MongoDB para itens
-app.get('/api/v1/itens', async (req, res) => {
-    const itens = await Item.find();
-    res.json(itens);
-});
-app.get('/api/v1/itens/:id', async (req, res) => {
-    const item = await Item.findById(req.params.id);
-    if (!item) return res.status(404).json({ error: 'Não encontrado' });
-    res.json(item);
-});
-app.post('/api/v1/itens', async (req, res) => {
-    const novo = new Item(req.body);
-    await novo.save();
-    res.status(201).json(novo);
-});
-app.put('/api/v1/itens/:id', async (req, res) => {
-    const atualizado = await Item.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (!atualizado) return res.status(404).json({ error: 'Não encontrado' });
-    res.json(atualizado);
-});
-app.delete('/api/v1/itens/:id', async (req, res) => {
-    const removido = await Item.findByIdAndDelete(req.params.id);
-    if (!removido) return res.status(404).json({ error: 'Não encontrado' });
-    res.json({ message: 'Removido com sucesso' });
 });
 
 // Inicialização

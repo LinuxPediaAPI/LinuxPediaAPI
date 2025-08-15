@@ -7,17 +7,6 @@ const path = require('path');
 const app = express();
 app.use(express.json());
 
-
-// Modelo simples para itens
-const Item = mongoose.model('Item', new mongoose.Schema({
-    comandos: String,
-    descricao: String,
-    categoria: String,
-    exemplo: String,
-    
-}));
-
-
 // Serve estáticos da pasta "public"
 app.use(express.static(path.join(__dirname, "../public")));
 app.use('/images', express.static(path.join(__dirname, "../public/images")));
@@ -31,6 +20,7 @@ app.get("/", (req, res) => {
 const comandoSchema = new mongoose.Schema({
     comandos: String,
     descricao: String,
+    categoria: String,
     exemplo: String,
     
 });

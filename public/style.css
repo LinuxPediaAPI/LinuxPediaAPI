@@ -125,9 +125,9 @@
 }
 .hero-content .row,
 .hero-content .col-lg-8 {
-  margin: 0;
+  margin: 10px;
   
-  padding: 0;
+  padding: 10px;
 }
 
 .kicker {

@@ -13,7 +13,7 @@ const Item = mongoose.model('Item', new mongoose.Schema({
     comandos: String,
     descricao: String,
     exemplo: String,
-    criadoEm: { type: Date, default: Date.now },
+    categoria: String,
 }));
 
 

@@ -616,6 +616,14 @@ footer {
   margin-right: auto;
 }
 
+.about-card a{
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  
+}
+
 
 
 @media (max-width: 575.98px) {

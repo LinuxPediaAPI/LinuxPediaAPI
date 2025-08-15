@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Linux Pedia API</title>
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lexend:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- META TAG OG -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://linux-pedia-api.vercel.app/?v=3" />
+    <meta property="og:title"
+        content="Linux Pedia API - Comandos Linux organizados por categoria, acessíveis via API! 🐧💻" />
+    <meta property="og:image" content="https://linux-pedia-api.vercel.app/images/Wallpaper.jpg" />
+    <meta property="og:description" content="A Linux Pedia é uma interface simples e organizada que fornece acesso a diversos comandos Linux, separados por categorias
+    como arquivos, rede, processos, permissões e mais. Ideal para estudantes, desenvolvedores e administradores que desejam consultar rapidamente comandos essenciais do
+    sistema Linux." />
+    <meta property="og:site_name" content="Linux Pedia API" />
+    <!--aumentar os resultados de busca-->
+    <meta name="description"
+        content="Explore todos os comandos do Linux com explicações detalhadas em uma API aberta e gratuita.">
+    <meta name="keywords" content="Linux, comandos Linux, terminal, API Linux, Linux Pedia">
+
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./favicon.png" type="image/png">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand fw-bold" href="./index.html" style="color: var(--color-bg);">Linux Pedia API</a>
+                <!-- Botão para celular -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./about.html">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./documention.html">Documentação</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./termsofuse.html">Termos de uso</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" href="https://github.com/LinuxPediaAPI" target="_blank"
+                                rel="noopener">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5 cards">
+        <div class="card p-4 shadow-lg about-card">
+            <img src="/images/dux2.png" alt="Mascote Linux Pedia" class="about-img mb-4">
+            <h1 class="mb-4">Sobre a Linux Pedia API</h1>
+            <p>A Linux Pedia API é uma interface simples e organizada que fornece acesso a diversos comandos Linux,
+                separados por categorias como arquivos, rede, processos, permissões e mais. Ideal para estudantes,
+                desenvolvedores e administradores que desejam consultar rapidamente comandos essenciais do sistema
+                Linux.</p>
+            <h2 class="mt-4">Objetivo</h2>
+            <p>Nosso objetivo é facilitar o aprendizado e o uso do Linux, oferecendo uma API gratuita e aberta que
+                permite aos usuários integrar facilmente os comandos Linux em suas aplicações e fluxos de trabalho.
+            </p>
+            <h2 class="mt-4">Tecnologias Utilizadas</h2>
+            <ul>
+                <li><strong>Node.js:</strong> Plataforma de execução JavaScript no servidor.</li>
+                <li><strong>Express:</strong> Framework web para Node.js, utilizado para criar a API.</li>
+                <li><strong>MongoDB:</strong> Banco de dados NoSQL utilizado para armazenar os comandos Linux.</li>
+                <li><strong>Vercel:</strong> Plataforma de nuvem utilizada para hospedar o Site e a API.</li>
+            </ul>
+            <h2 class="mt-4">Contribuições</h2>
+            <p>A Linux Pedia API é um projeto open-source e aceita contribuições da comunidade. Se você deseja
+                contribuir com novos comandos, melhorias ou correções, sinta-se à vontade para abrir um pull request
+                no nosso repositório do GitHub.</p>
+            <h2 class="mt-4">Contato</h2>
+            <p>Se você tiver dúvidas, sugestões ou precisar de suporte, entre em contato conosco através do nosso
+                repositório no GitHub ou envie um email para contato@linuxpediaapi.com.</p>
+            
+        </div>
+
+    </main>
+
+    <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

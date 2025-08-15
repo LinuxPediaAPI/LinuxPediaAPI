@@ -72,7 +72,7 @@
 .image-marquee .col {
   /* Colunas de imagens animadas verticalmente */
   display: grid;
-  gap: 20px;
+  gap: 10px; /* Reduzido para aproximar as imagens */
   animation: scroll-col 18s linear infinite;
 }
 .image-marquee .col:nth-child(2) {
@@ -92,7 +92,6 @@
   border-radius: 26px;
   box-shadow: 0 10px 30px rgba(0,0,0,.35);
   opacity: 0.5;
-  
 }
 
 @keyframes scroll-col {
@@ -114,16 +113,20 @@
 .hero-content {
   position: relative;
   z-index: 3;
-  padding: 96px 0 96px 0;
+  padding: 50px 0;
   margin: 0;
   max-width: 1000px;
-  padding-left: 2vw;
-  margin-right: 2vw; /* Aumenta o espaço à direita do texto */
+  padding-left: 0.5vw;
+  margin-right: 0.5vw; /* Reduz o espaço à direita do texto */
 }
-
+.hero img[src$=".svg"] {
+  /* Aplica tom #4b3f72 (var(--color-dark)) apenas em SVGs */
+  filter: invert(18%) sepia(18%) saturate(1162%) hue-rotate(217deg) brightness(0.92) contrast(1.05);
+}
 .hero-content .row,
 .hero-content .col-lg-8 {
   margin: 0;
+  
   padding: 0;
 }
 
@@ -284,7 +287,7 @@ footer {
 .cards .card {
   max-width: 100%;
   width: 100%;
-  height: 50vh;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
@@ -538,7 +541,7 @@ footer {
     display: none !important;
   }
   .cards .card {
-    height: 45vh;
+    height: auto;
   }
   .cards .card .img-fluid {
     width: 60%;
@@ -570,7 +573,7 @@ footer {
   }
 
   .cards .card {
-    height: 50vh;
+    height: auto;
   }
 
   .cards .card .img-fluid {
@@ -588,6 +591,40 @@ footer {
 
   .hero-content {
     margin-top: 2rem;
+  }
+}
+
+/* Estilo para o card About */
+.about-card {
+  max-width: 900px; /* aumentada a largura máxima */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2.5rem; /* borda um pouco mais arredondada */
+  background: var(--color-bg);
+  box-shadow: 0 12px 40px 0 var(--color-shadow); /* sombra mais forte */
+  padding: 3.5rem 2.5rem; /* mais espaço interno */
+  min-height: 0;
+  height: auto;
+}
+
+.about-img {
+  width: 180px;
+  height: 180px;
+  transition: transform 0.2s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+@media (max-width: 575.98px) {
+  .about-card {
+    padding: 1.2rem 0.5rem;
+  }
+  .about-img {
+    width: 120px;
+    height: 120px;
   }
 }
 

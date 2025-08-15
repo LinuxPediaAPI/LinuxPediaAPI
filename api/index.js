@@ -31,7 +31,7 @@ const comandoSchema = new mongoose.Schema({
     comandos: String,
     descricao: String,
     exemplo: String,
-    criadoEm: { type: Date, default: Date.now },
+    
 });
 
 const ComandoArquivo = mongoose.model('ComandoArquivo', comandoSchema);
@@ -52,36 +52,60 @@ mongoose.connect(process.env.MONGODB_URI, {
 function createComandoCrudRoutes(model, categoria) {
     // Listar todos
     app.get(`/api/v1/comandos/${categoria}`, async (req, res) => {
-        const comandos = await model.find();
-        res.json(comandos);
+        try {
+            const comandos = await model.find();
+            res.json(comandos);
+        } catch (err) {
+            res.status(500).json({ error: 'Erro ao buscar comandos' });
+        }
     });
 
     // Buscar por ID
     app.get(`/api/v1/comandos/${categoria}/:id`, async (req, res) => {
-        const comando = await model.findById(req.params.id);
-        if (!comando) return res.status(404).json({ error: 'Não encontrado' });
-        res.json(comando);
+        try {
+            const comando = await model.findById(req.params.id);
+            if (!comando) return res.status(404).json({ error: 'Não encontrado' });
+            res.json(comando);
+        } catch (err) {
+            res.status(400).json({ error: 'ID inválido' });
+        }
     });
 
     // Criar
     app.post(`/api/v1/comandos/${categoria}`, async (req, res) => {
-        const novo = new model(req.body);
-        await novo.save();
-        res.status(201).json(novo);
+        try {
+            const novo = new model(req.body);
+            await novo.save();
+            res.status(201).json(novo);
+        } catch (err) {
+            res.status(400).json({ error: 'Erro ao criar comando' });
+        }
     });
 
     // Atualizar
     app.put(`/api/v1/comandos/${categoria}/:id`, async (req, res) => {
-        const atualizado = await model.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        if (!atualizado) return res.status(404).json({ error: 'Não encontrado' });
-        res.json(atualizado);
+        try {
+            const atualizado = await model.findByIdAndUpdate(
+                req.params.id,
+                req.body,
+                { new: true, runValidators: true }
+            );
+            if (!atualizado) return res.status(404).json({ error: 'Não encontrado' });
+            res.json(atualizado);
+        } catch (err) {
+            res.status(400).json({ error: 'Erro ao atualizar comando' });
+        }
     });
 
     // Remover
     app.delete(`/api/v1/comandos/${categoria}/:id`, async (req, res) => {
-        const removido = await model.findByIdAndDelete(req.params.id);
-        if (!removido) return res.status(404).json({ error: 'Não encontrado' });
-        res.json({ message: 'Removido com sucesso' });
+        try {
+            const removido = await model.findByIdAndDelete(req.params.id);
+            if (!removido) return res.status(404).json({ error: 'Não encontrado' });
+            res.json({ message: 'Removido com sucesso' });
+        } catch (err) {
+            res.status(400).json({ error: 'Erro ao remover comando' });
+        }
     });
 }
 
@@ -92,22 +116,6 @@ createComandoCrudRoutes(ComandoRede, 'rede');
 createComandoCrudRoutes(ComandoPacote, 'pacotes');
 createComandoCrudRoutes(ComandoUtil, 'util');
 
-// Rotas GET para comandos por categoria (mock)
-app.get('/api/v1/comandos/arquivos', (req, res) => {
-    res.json({ comandos: [], categoria: 'arquivos' });
-});
-app.get('/api/v1/comandos/sistema', (req, res) => {
-    res.json({ comandos: [], categoria: 'sistema' });
-});
-app.get('/api/v1/comandos/rede', (req, res) => {
-    res.json({ comandos: [], categoria: 'rede' });
-});
-app.get('/api/v1/comandos/pacotes', (req, res) => {
-    res.json({ comandos: [], categoria: 'pacotes' });
-});
-app.get('/api/v1/comandos/util', (req, res) => {
-    res.json({ comandos: [], categoria: 'util' });
-});
 
 // Inicialização
 const PORT = process.env.PORT || 3000;

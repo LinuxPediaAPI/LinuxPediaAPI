@@ -8,6 +8,15 @@ const app = express();
 app.use(express.json());
 
 
+// Modelo simples para itens
+const Item = mongoose.model('Item', new mongoose.Schema({
+    comandos: String,
+    descricao: String,
+    exemplo: String,
+    criadoEm: { type: Date, default: Date.now },
+}));
+
+
 // Serve estáticos da pasta "public"
 app.use(express.static(path.join(__dirname, "../public")));
 app.use('/images', express.static(path.join(__dirname, "../public/images")));
@@ -17,10 +26,11 @@ app.get("/", (req, res) => {
 });
 
 
-// Schemas e Models para cada categoria de comandos
+// Definição do schema para comandos
 const comandoSchema = new mongoose.Schema({
-    nome: String,
+    comandos: String,
     descricao: String,
+    exemplo: String,
     criadoEm: { type: Date, default: Date.now },
 });
 
@@ -29,14 +39,6 @@ const ComandoSistema = mongoose.model('ComandoSistema', comandoSchema);
 const ComandoRede = mongoose.model('ComandoRede', comandoSchema);
 const ComandoPacote = mongoose.model('ComandoPacote', comandoSchema);
 const ComandoUtil = mongoose.model('ComandoUtil', comandoSchema);
-
-// Modelo simples para itens
-const Item = mongoose.model('Item', new mongoose.Schema({
-    comandos: String,
-    descricao: String,
-    exemplo: String,
-    criadoEm: { type: Date, default: Date.now },
-}));
 
 // Conexão com MongoDB
 mongoose.connect(process.env.MONGODB_URI, {

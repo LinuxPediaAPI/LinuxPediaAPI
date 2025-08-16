@@ -636,6 +636,137 @@ footer {
   }
 }
 
+/* =========================
+   MEDIA QUERIES CENTRALIZADAS
+========================= */
+
+/* Celulares (antigo) */
+@media (max-width: 320px) {
+  .hero-content {
+    padding: 0.5rem 0.2rem;
+    max-width: 100vw;
+  }
+  .hero-content h1 {
+    font-size: 1.1rem;
+  }
+  .about-card {
+    padding: 0.5rem 0.2rem;
+    max-width: 100vw;
+  }
+  .about-img {
+    width: 80px;
+    height: 80px;
+  }
+  .cards .card {
+    border-radius: 0.7rem;
+    max-width: 100vw;
+  }
+  .cards .card .img-fluid {
+    width: 100% !important;
+    max-width: 100vw;
+  }
+}
+
+/* Celulares pequenos  */
+@media (max-width: 375px) {
+  .hero-content {
+    padding: 0.7rem 0.3rem;
+    max-width: 100vw;
+  }
+  .hero-content h1 {
+    font-size: 1.2rem;
+  }
+  .about-card {
+    padding: 0.7rem 0.3rem;
+    max-width: 100vw;
+  }
+  .about-img {
+    width: 90px;
+    height: 90px;
+  }
+  .cards .card {
+    border-radius: 0.9rem;
+    max-width: 100vw;
+  }
+  .cards .card .img-fluid {
+    width: 100% !important;
+    max-width: 100vw;
+  }
+}
+
+/* Celulares grandes */
+@media (max-width: 428px) {
+  .hero-content {
+    padding: 0.9rem 0.4rem;
+    max-width: 100vw;
+  }
+  .hero-content h1 {
+    font-size: 1.3rem;
+  }
+  .about-card {
+    padding: 0.9rem 0.4rem;
+    max-width: 100vw;
+  }
+  .about-img {
+    width: 100px;
+    height: 100px;
+  }
+  .cards .card {
+    border-radius: 1rem;
+    max-width: 100vw;
+  }
+  .cards .card .img-fluid {
+    width: 100% !important;
+    max-width: 100vw;
+  }
+}
+
+/* Tablets e acima (caso queira) */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+    padding: 60px 20px 30px;
+    display: block;
+  }
+  .hero-content {
+    padding: 1.5rem 1rem;
+    max-width: 98vw;
+  }
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .image-marquee,
+  .blob-pattern,
+  .hero-images {
+    display: none !important;
+  }
+  .cards .card {
+    border-radius: 1.5rem;
+    width: 100%;
+    max-width: 98vw;
+  }
+  .cards .card .row,
+  .cards .card:nth-child(even) .row,
+  .cards .card:nth-child(odd) .row {
+    flex-direction: column !important;
+    flex-wrap: wrap;
+  }
+  .cards .card .img-fluid {
+    width: 100% !important;
+    border-radius: 1.5rem 1.5rem 0 0 !important;
+    min-width: 0;
+    max-width: 98vw;
+  }
+  .about-card {
+    padding: 1.2rem 0.8rem;
+    max-width: 98vw;
+  }
+  .about-img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
 
 
 

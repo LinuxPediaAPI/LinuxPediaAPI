@@ -21,7 +21,12 @@ const comandoSchema = new mongoose.Schema({
     comandos: String,
     descricao: String,
     categoria: String,
-    exemplo: String,
+    exemplo: [
+        {
+            "comando": String,
+            "descrição": String
+        }
+    ],
     
 });
 

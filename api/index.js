@@ -17,15 +17,13 @@ app.get("/", (req, res) => {
 
 // Definição do schema para comandos
 const comandoSchema = new mongoose.Schema({
-    comandos: String,
-    descricao: String,
-    categoria: String,
-    exemplo: [
-        {
-            comando: String,
-            descricao: String
-        }
-    ]
+    comandos: {type: String, required: true},
+    descricao: {type: String, required: true},
+    categoria: {type: String, required: true},
+    exemplo: [{
+            comando: {type: String, required: true},
+            descricao: {type: String, required: true}
+        }]
 }, { minimize: false });
 
 const ComandoArquivo = mongoose.model('ComandoArquivo', comandoSchema);

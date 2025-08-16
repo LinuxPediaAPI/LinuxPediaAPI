@@ -1,5 +1,4 @@
 require('dotenv').config();
-const e = require('express');
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -23,12 +22,11 @@ const comandoSchema = new mongoose.Schema({
     categoria: String,
     exemplo: [
         {
-            "comando": String,
-            "descrição": String
+            comando: String,
+            descricao: String
         }
-    ],
-    
-});
+    ]
+}, { minimize: false });
 
 const ComandoArquivo = mongoose.model('ComandoArquivo', comandoSchema);
 const ComandoSistema = mongoose.model('ComandoSistema', comandoSchema);

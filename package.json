@@ -4,7 +4,7 @@
   "description": "API for LinuxPedia",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./api/index.js"
+    "start": "nodemon api/index.js"
   },
   "author": "Vito",
   "license": "ISC",

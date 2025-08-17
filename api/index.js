@@ -66,15 +66,24 @@ function createComandoCrudRoutes(model, categoria) {
     });
 
     // Criar
-    app.post(`/api/v1/comandos/${categoria}`, async (req, res) => {
-        try {
+ app.post(`/api/v1/comandos/${categoria}`, async (req, res) => {
+    try {
+        if (Array.isArray(req.body)) {
+            // Se for um array, insere todos de uma vez
+            const novos = await model.insertMany(req.body);
+            res.status(201).json(novos);
+        } else {
+            // Se for um único objeto, salva normalmente
             const novo = new model(req.body);
             await novo.save();
             res.status(201).json(novo);
-        } catch (err) {
-            res.status(400).json({ error: 'Erro ao criar comando' });
         }
-    });
+    } catch (err) {
+        console.error(err); // para debug
+        res.status(400).json({ error: 'Erro ao criar comando', detalhes: err.message });
+    }
+});
+
 
     // Atualizar
     app.put(`/api/v1/comandos/${categoria}/:id`, async (req, res) => {

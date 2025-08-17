@@ -13,6 +13,11 @@ app.use('/favicon.ico', express.static(path.join(__dirname, '../public/favicon.i
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"));
 });
+// Definição do schema para exemplos
+const exemploSchema = new mongoose.Schema({
+  comando: { type: String, required: true },
+  descricao: { type: String, required: true }
+}, { _id: true }); // mantém id dos exemplos
 
 
 // Definição do schema para comandos
@@ -20,10 +25,7 @@ const comandoSchema = new mongoose.Schema({
     comandos: {type: String, required: true},
     descricao: {type: String, required: true},
     categoria: {type: String, required: true},
-    exemplo: [{
-            comando: {type: String, required: true},
-            descricao: {type: String, required: true}
-        }]
+    exemplo: [exemploSchema]
 }, { minimize: false });
 
 const ComandoArquivo = mongoose.model('ComandoArquivo', comandoSchema);

@@ -1,4 +1,4 @@
-<h1 align="center">Linux Pedia API</h1>
+<h1 align="center">🐧 Linux Pedia API</h1>
 
 <div align="center">
   <p>
@@ -21,7 +21,7 @@
 
 ---
 
-## 🔧 Motivo
+## 🔧 Sobre o projeto
 
 O acesso programático a informações sobre Linux é fundamental para desenvolvedores, sysadmins e entusiastas. O Linux Pedia API facilita a consulta de dados relevantes, promovendo o software livre e a colaboração.
 
@@ -33,13 +33,31 @@ Este projeto experimental centraliza e disponibiliza endpoints modernos para con
 
 Consulte endpoints para:
 
-- Distribuições Linux (Debian, Ubuntu, Fedora, etc)  
-- Comandos e exemplos de uso  
-- Versões do kernel  
-- Pacotes populares  
-- Histórico e curiosidades  
+- 🐧 Distribuições Linux (Debian, Ubuntu, Fedora, etc)  
+- 🖥️ Comandos e exemplos de uso  
+- 🧩 Versões do kernel  
+- 📦 Pacotes populares  
+- 📜 Histórico e curiosidades  
 
 Para documentação completa, acesse: [Documentação Linux Pedia API no GitHub](https://github.com/vn-wiki/LinuxPedia#readme)
+
+---
+
+## 🖼️ Prévia
+
+![Preview do projeto](.github/preview.png)
+
+---
+
+## 🚀 Tecnologias utilizadas
+
+| Tecnologia | Logo | Descrição |
+|------------|------|-----------|
+| **Node.js** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" height="40" alt="Node.js"/> | Backend que alimenta a API com endpoints RESTful |
+| **MongoDB** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="40" height="40" alt="MongoDB"/> | Banco de dados NoSQL utilizado para armazenar informações |
+| **HTML, CSS, JS** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" alt="HTML"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40" alt="CSS"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" alt="JavaScript"/> | Frontend da documentação |
+| **Insomnia** | <img src="https://raw.githubusercontent.com/get-icon/geticon/master/icons/insomnia.svg" width="40" height="40" alt="Insomnia"/> | Testes e validação dos endpoints da API |
+| **Vercel** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" width="40" height="40" alt="Vercel"/> | Plataforma de deploy e hospedagem do projeto |
 
 ---
 
@@ -62,7 +80,7 @@ O LinuxPedia API é uma iniciativa aberta para a comunidade. Por favor, não abu
 - Evite consultas automatizadas em massa ou crawling de todos os dados.  
 - Para grandes volumes, entre em contato para soluções adequadas.
 
-Nunca faça:
+❌ Nunca faça:
 
 - Requisições em loop para todos os comandos ou distribuições  
 - Uso para fins maliciosos ou spam  

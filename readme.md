@@ -23,7 +23,7 @@
 
 ## 🔧 Sobre o projeto
 
-O acesso programático a informações sobre Linux é fundamental para desenvolvedores, sysadmins e entusiastas. O Linux Pedia API facilita a consulta de dados relevantes, promovendo o software livre e a colaboração.
+O acesso programático a informações sobre Linux é fundamental para desenvolvedores, sysadmins e entusiastas. O **Linux Pedia API** facilita a consulta de dados relevantes, promovendo o software livre e a colaboração.
 
 Este projeto experimental centraliza e disponibiliza endpoints modernos para consulta sobre distribuições, comandos, kernel, pacotes e muito mais.
 
@@ -39,7 +39,7 @@ Consulte endpoints para:
 - 📦 Pacotes populares  
 - 📜 Histórico e curiosidades  
 
-Para documentação completa, acesse: [Documentação Linux Pedia API no GitHub](https://github.com/vn-wiki/LinuxPedia#readme)
+👉 Site oficial: [linux-pedia-api.vercel.app](https://linux-pedia-api.vercel.app/)
 
 ---
 
@@ -124,7 +124,11 @@ O LinuxPedia API é uma iniciativa aberta para a comunidade. Por favor, não abu
   </tr>
 </table>
 
+---
+
+## 📜 Licença
+Este projeto está licenciado sob a [MIT License](./LICENSE).
 
 ---
 
-Feito com Carinho Para Toda a Comunidade de Linux 
+✨ Feito com Carinho Para Toda a Comunidade de Linux 

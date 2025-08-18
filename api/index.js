@@ -15,16 +15,22 @@ app.get("/", (req, res) => {
 });
 // Definição do schema para exemplos
 const exemploSchema = new mongoose.Schema({
-  comando: { type: String, required: true },
-  descricao: { type: String, required: true }
-}, { _id: true }); // mantém id dos exemplos
+    comando: {
+        type: String,
+        required: true
+    },
+    descricao: {
+        type: String,
+        required: true
+    }
+});
 
 
 // Definição do schema para comandos
 const comandoSchema = new mongoose.Schema({
-    comandos: {type: String, required: true},
-    descricao: {type: String, required: true},
-    categoria: {type: String, required: true},
+    comandos: { type: String, required: true },
+    descricao: { type: String, required: true },
+    categoria: { type: String, required: true },
     exemplo: [exemploSchema]
 }, { minimize: false });
 
@@ -66,23 +72,23 @@ function createComandoCrudRoutes(model, categoria) {
     });
 
     // Criar
- app.post(`/api/v1/comandos/${categoria}`, async (req, res) => {
-    try {
-        if (Array.isArray(req.body)) {
-            // Se for um array, insere todos de uma vez
-            const novos = await model.insertMany(req.body);
-            res.status(201).json(novos);
-        } else {
-            // Se for um único objeto, salva normalmente
-            const novo = new model(req.body);
-            await novo.save();
-            res.status(201).json(novo);
+    app.post(`/api/v1/comandos/${categoria}`, async (req, res) => {
+        try {
+            if (Array.isArray(req.body)) {
+                // Se for um array, insere todos de uma vez
+                const novos = await model.insertMany(req.body);
+                res.status(201).json(novos);
+            } else {
+                // Se for um único objeto, salva normalmente
+                const novo = new model(req.body);
+                await novo.save();
+                res.status(201).json(novo);
+            }
+        } catch (err) {
+            console.error(err); // para debug
+            res.status(400).json({ error: 'Erro ao criar comando', detalhes: err.message });
         }
-    } catch (err) {
-        console.error(err); // para debug
-        res.status(400).json({ error: 'Erro ao criar comando', detalhes: err.message });
-    }
-});
+    });
 
 
     // Atualizar

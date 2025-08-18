@@ -53,11 +53,12 @@ Para documentação completa, acesse: [Documentação Linux Pedia API no GitHub]
 
 | Tecnologia | Logo | Descrição |
 |------------|------|-----------|
-| **Node.js** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" height="40" alt="Node.js"/> | Backend que alimenta a API com endpoints RESTful |
-| **MongoDB** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="40" height="40" alt="MongoDB"/> | Banco de dados NoSQL utilizado para armazenar informações |
+| **Node.js** | <div align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" height="40" alt="Node.js"/></div> | Backend que alimenta a API com endpoints RESTful |
+| **MongoDB** | <div align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="40" height="40" alt="MongoDB"/></div> | Banco de dados NoSQL utilizado para armazenar informações |
 | **HTML, CSS, JS** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" alt="HTML"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40" alt="CSS"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" alt="JavaScript"/> | Frontend da documentação |
-| **Insomnia** | <img src="https://raw.githubusercontent.com/get-icon/geticon/master/icons/insomnia.svg" width="40" height="40" alt="Insomnia"/> | Testes e validação dos endpoints da API |
-| **Vercel** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" width="40" height="40" alt="Vercel"/> | Plataforma de deploy e hospedagem do projeto |
+| **Insomnia** | <div align="center"><img src="https://raw.githubusercontent.com/get-icon/geticon/master/icons/insomnia.svg" width="40" height="40" alt="Insomnia"/></div> | Testes e validação dos endpoints da API |
+| **Vercel** | <div align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" width="40" height="40" alt="Vercel"/></div> | Plataforma de deploy e hospedagem do projeto |
+
 
 ---
 

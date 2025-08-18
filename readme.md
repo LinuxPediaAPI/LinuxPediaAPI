@@ -43,12 +43,6 @@ Consulte endpoints para:
 
 ---
 
-## 🖼️ Prévia
-
-![Preview do projeto](.github/preview.png)
-
----
-
 ## 🚀 Tecnologias utilizadas
 
 | Tecnologia | Logo | Descrição |

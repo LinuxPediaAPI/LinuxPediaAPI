@@ -405,6 +405,10 @@ footer {
     width: 100%;
     padding: 12px;
     font-size: 1rem;
+    display: flex;              
+    align-items: center;       
+    justify-content: center;    
+    line-height: 1.2;
   }
 
   .hero-images,

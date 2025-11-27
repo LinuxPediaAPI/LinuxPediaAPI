@@ -9,6 +9,7 @@
   "author": "Vito",
   "license": "ISC",
   "dependencies": {
+    "@vercel/speed-insights": "^1.2.0",
     "bootstrap": "^5.3.7",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",

@@ -1,0 +1,13 @@
+# Robots.txt - Linux Pedia API
+User-agent: *
+Allow: /
+Allow: /about.html
+Allow: /documention.html
+Allow: /termsofuse.html
+Allow: /api/
+
+# Sitemap
+Sitemap: https://linux-pedia-api.vercel.app/sitemap.xml
+
+# Crawl delay para evitar sobrecarga
+Crawl-delay: 1

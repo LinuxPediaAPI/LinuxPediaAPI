@@ -1,21 +1,7 @@
 {
     "version": 2,
-    "builds": [
-        { "src": "api/index.js", "use": "@vercel/node" },
-        { "src": "public/**", "use": "@vercel/static" }
-    ],
-    "routes": [
-        { "src": "/api/(.*)", "dest": "api/index.js" },
-        { "src": "/robots.txt", "dest": "/public/robots.txt" },
-        { "src": "/sitemap.xml", "dest": "/public/sitemap.xml" },
-        { "src": "/images/(.*)", "dest": "/public/images/$1" },
-        { "src": "/favicon.ico", "dest": "/public/favicon.ico" },
-        { "src": "/favicon.png", "dest": "/public/favicon.png" },
-        { "src": "/style.css", "dest": "/public/style.css" },
-        { "src": "/about.html", "dest": "/public/about.html" },
-        { "src": "/documention.html", "dest": "/public/documention.html" },
-        { "src": "/termsofuse.html", "dest": "/public/termsofuse.html" },
-        { "src": "/", "dest": "/public/index.html" }
+    "rewrites": [
+        { "source": "/api/(.*)", "destination": "/api/index.js" }
     ],
     "headers": [
         {

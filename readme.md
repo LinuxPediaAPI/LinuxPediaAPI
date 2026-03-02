@@ -2,7 +2,7 @@
 
 <div align="center">
   <p>
-    <strong>Transformando o Linux em uma API acessível para todos</strong>
+    <strong>Turning the Linux ecosystem into a structured and accessible API</strong>
   </p>
 </div>
 
@@ -14,77 +14,190 @@
     <img src="https://img.shields.io/github/license/vn-wiki/LinuxPedia" alt="License" />
   </a>
   <a href="https://nodejs.org/">
-    <img src="https://img.shields.io/badge/language-Node.js-green" alt="Language" />
+    <img src="https://img.shields.io/badge/runtime-Node.js-green" alt="Node.js" />
   </a>
 </div>
 
+---
+
+## 📌 About the Project
+
+Linux Pedia API is an experimental RESTful API designed to provide structured and programmatic access to Linux-related information.
+
+It centralizes data about:
+
+- 🐧 Linux distributions  
+- 🖥️ Commands and usage examples  
+- 🧩 Kernel versions  
+- 📦 Popular packages  
+- 📜 History and technical curiosities  
+
+The goal is to make Linux knowledge easier to integrate into applications, bots, dashboards, and educational tools.
 
 ---
 
-## 🔧 Sobre o projeto
+## 🌐 Live Website
 
-O acesso programático a informações sobre Linux é fundamental para desenvolvedores, sysadmins e entusiastas. O **Linux Pedia API** facilita a consulta de dados relevantes, promovendo o software livre e a colaboração.
+Official documentation website:
 
-Este projeto experimental centraliza e disponibiliza endpoints modernos para consulta sobre distribuições, comandos, kernel, pacotes e muito mais.
-
----
-
-## 📖 Documentação
-
-Consulte endpoints para:
-
-- 🐧 Distribuições Linux (Debian, Ubuntu, Fedora, etc)  
-- 🖥️ Comandos e exemplos de uso  
-- 🧩 Versões do kernel  
-- 📦 Pacotes populares  
-- 📜 Histórico e curiosidades  
-
-👉 Site oficial: [linux-pedia-api.vercel.app](https://linux-pedia-api.vercel.app/)
+👉 https://linux-pedia-api.vercel.app/
 
 ---
 
-## 🚀 Tecnologias utilizadas
+## 🚀 Technologies Used
 
-| Tecnologia | Logo | Descrição |
-|------------|------|-----------|
-| **Node.js** | <div align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" height="40" alt="Node.js"/></div> | Backend que alimenta a API com endpoints RESTful |
-| **MongoDB** | <div align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="40" height="40" alt="MongoDB"/></div> | Banco de dados NoSQL utilizado para armazenar informações |
-| **HTML, CSS, JS** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" alt="HTML"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40" alt="CSS"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" alt="JavaScript"/> | Frontend da documentação |
-| **Insomnia** | <div align="center"><img src="https://raw.githubusercontent.com/get-icon/geticon/master/icons/insomnia.svg" width="40" height="40" alt="Insomnia"/></div> | Testes e validação dos endpoints da API |
-| **Vercel** | <div align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" width="40" height="40" alt="Vercel"/></div> | Plataforma de deploy e hospedagem do projeto |
-
-
----
-
-## 🤝 Como contribuir
-
-Este projeto é uma cooperação aberta! Sua contribuição é muito bem-vinda.
-
-1. Fork este repositório  
-2. Crie sua branch: `git checkout -b feature/nova-funcionalidade`  
-3. Faça o commit das suas alterações: `git commit -m 'Adiciona nova funcionalidade'`  
-4. Push para a branch: `git push origin feature/nova-funcionalidade`  
-5. Abra um Pull Request  
+| Technology | Logo | Description |
+|------------|------|-------------|
+| **Node.js** | <div align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" height="40" alt="Node.js"/></div> | Backend runtime powering the RESTful API endpoints |
+| **MongoDB** | <div align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="40" height="40" alt="MongoDB"/></div> | NoSQL database used to store structured information |
+| **HTML, CSS, JS** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" alt="HTML"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40" alt="CSS"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" alt="JavaScript"/> | Documentation website frontend |
+| **Insomnia** | <div align="center"><img src="https://raw.githubusercontent.com/get-icon/geticon/master/icons/insomnia.svg" width="40" height="40" alt="Insomnia"/></div> | API endpoint testing and validation |
+| **Vercel** | <div align="center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" width="40" height="40" alt="Vercel"/></div> | Deployment and hosting platform |
 
 ---
 
-## ⚠️ Termos de uso
+## 📁 Project Structure
 
-O LinuxPedia API é uma iniciativa aberta para a comunidade. Por favor, não abuse deste serviço.
-
-- Evite consultas automatizadas em massa ou crawling de todos os dados.  
-- Para grandes volumes, entre em contato para soluções adequadas.
-
-❌ Nunca faça:
-
-- Requisições em loop para todos os comandos ou distribuições  
-- Uso para fins maliciosos ou spam  
+```bash
+LinuxPediaAPI/
+├── LICENSE
+├── api/
+│   └── index.js
+├── package-lock.json
+├── package.json
+├── public/
+│   ├── about.html
+│   ├── documention.html
+│   ├── favicon.png
+│   ├── images/
+│   │   ├── Wallpaper.jpg
+│   │   ├── cmds/
+│   │   │   ├── cat.svg
+│   │   │   ├── cd.svg
+│   │   │   ├── chmod.svg
+│   │   │   ├── chown.svg
+│   │   │   ├── cp.svg
+│   │   │   ├── df.svg
+│   │   │   ├── find.svg
+│   │   │   ├── grep.svg
+│   │   │   ├── kill.svg
+│   │   │   ├── ls.svg
+│   │   │   ├── mkdir.svg
+│   │   │   ├── mv.svg
+│   │   │   ├── ps.svg
+│   │   │   ├── pwd.svg
+│   │   │   ├── rm.svg
+│   │   │   ├── top.svg
+│   │   │   └── touch.svg
+│   │   ├── dux1.png
+│   │   ├── dux2.png
+│   │   ├── dux3.png
+│   │   └── ondas.svg
+│   ├── index.html
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   ├── style.css
+│   └── termsofuse.html
+├── readme.md
+└── vercel.json
+```
 
 ---
 
+## 🚀 Running Locally
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/vn-wiki/LinuxPedia.git
+cd LinuxPedia
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the server:
+
+```bash
+npm start
+```
+
+The API should now be running locally.
+
 ---
 
-## 👥 Contribuidores
+## 📡 Example Endpoint
+
+### Example request
+
+```http
+GET /api/v1/comandos/arquivos
+```
+
+### Example response
+
+```json
+[
+  { 
+    "comandos": "ls",
+    "descricao": "Lista arquivos e diretórios",
+    "exemplo": "ls -la"
+  },
+  { 
+    "comandos": "cp",
+    "descricao": "Copia arquivos ou diretórios",
+    "exemplo": "cp arquivo.txt /tmp"
+  }
+]
+```
+
+---
+
+## 📌 Endpoint Pattern
+
+All command endpoints follow this structure:
+
+```
+GET /api/v1/comandos/{categoria}
+```
+
+Replace `{categoria}` with one of the available categories:
+
+- `arquivos`
+- `processos`
+- `rede`
+- `usuarios`
+- `pacotes`
+## 🤝 Contributing
+
+This is an open community project. Contributions are welcome.
+
+1. Fork the repository  
+2. Create a new branch  
+3. Commit your changes  
+4. Push to your branch  
+5. Open a Pull Request  
+
+---
+
+## ⚠️ Terms of Use
+
+Linux Pedia API is an open initiative. Please use it responsibly.
+
+Do not:
+
+- Send mass automated requests  
+- Crawl all endpoints repeatedly  
+- Use the API for malicious activities or spam  
+
+For high-volume usage, please get in contact.
+
+---
+
+## 👥 Contributors
 
 <a href="https://github.com/LinuxPediaAPI/LinuxPediaAPI/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=LinuxPediaAPI/LinuxPediaAPI" />
@@ -92,37 +205,18 @@ O LinuxPedia API é uma iniciativa aberta para a comunidade. Por favor, não abu
 
 ---
 
-## 👨‍💻 Autores
+## 👨‍💻 Authors
 
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/vito-ysl">
-        <img src="https://github.com/vito-ysl.png?size=115" width="115" style="border-radius: 50%;" /><br />
-        <sub>@vito-ysl</sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/Rezys07">
-        <img src="https://github.com/Rezys07.png?size=115" width="115" style="border-radius: 50%;" /><br />
-        <sub>@Rezys07</sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/alex518123">
-        <img src="https://avatars.githubusercontent.com/u/124455647?v=4" width="115" style="border-radius: 50%;" /><br />
-        <sub>@alex518123</sub>
-      </a>
-    </td>
-  </tr>
-</table>
+- @vito-ysl  
+- @Rezys07  
+- @alex518123  
 
 ---
 
-## 📜 Licença
-Este projeto está licenciado sob a [MIT License](./LICENSE).
+## 📜 License
+
+This project is licensed under the MIT License.
 
 ---
 
-✨ Feito com Carinho Para Toda a Comunidade de Linux 
+✨ Built with care for the Linux community.

@@ -8,13 +8,6 @@ const app = express();
 // Middlewares
 app.use(express.json());
 
-// Headers de segurança e performance
-app.use((req, res, next) => {
-    res.setHeader('X-Content-Type-Options', 'nosniff');
-    res.setHeader('X-Frame-Options', 'DENY');
-    res.setHeader('X-XSS-Protection', '1; mode=block');
-    next();
-});
 
 // Serve estáticos da pasta "public"
 app.use(express.static(path.join(__dirname, "../public")));
@@ -71,9 +64,9 @@ if (!process.env.MONGODB_URI) {
         });
 }
 
-// Cache em memória simples (60 segundos)
+// Cache em memória simples 10 segundos)
 const cache = new Map();
-const CACHE_TTL = 60000; // 60 segundos
+const CACHE_TTL = 10000; // 10 segundos
 
 function getFromCache(key) {
     const cached = cache.get(key);
@@ -145,7 +138,7 @@ function createComandoCrudRoutes(model, categoria) {
             const comando = await model.findById(req.params.id)
                 .select('-__v')
                 .lean()
-                .maxTimeMS(5000);
+                .maxTimeMS(1000);
                 
             if (!comando) {
                 return res.status(404).json({ error: 'Comando não encontrado' });

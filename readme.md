@@ -40,7 +40,7 @@ The goal is to make Linux knowledge easier to integrate into applications, bots,
 
 Official documentation website:
 
-👉 https://linux-pedia-api.vercel.app/
+👉 https://linuxpediaapi.com/
 
 ---
 
